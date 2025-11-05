@@ -1,0 +1,67 @@
+a)mysql> select owner from pet;
++--------+
+| owner  |
++--------+
+| Gwen   |
+| Harold |
+| Benny  |
+| Diane  |
+| Gwen   |
+| Gwen   |
+| Benny  |
+| Harold |
++--------+
+
+
+b) mysql> SELECT name FROM pet ORDER BY name;
++----------+
+| name     |
++----------+
+| Bowser   |
+| Buffy    |
+| Chirpy   |
+| Claws    |
+| Fang     |
+| Fluffy   |
+| Slim     |
+| Whistler |
++----------+
+
+
+c)mysql>  select * from pet where death is null;
++----------+--------+---------+------+------------+-------+
+| name     | owner  | species | sex  | birth      | death |
++----------+--------+---------+------+------------+-------+
+| Claws    | Gwen   | cat     | m    | 1994-03-17 | NULL  |
+| Buffy    | Harold | dog     | f    | 1989-05-13 | NULL  |
+| Fang     | Benny  | dog     | m    | 1990-08-27 | NULL  |
+| Whistler | Gwen   | bird    | NULL | 1997-12-09 | NULL  |
+| Slim     | Benny  | snake   | m    | 1996-04-29 | NULL  |
+| Fluffy   | Harold | cat     | f    | 1993-02-04 | NULL  |
++----------+--------+---------+------+------------+-------+
+
+
+d)mysql> SELECT owner from pet where owner like 'H%';
++--------+
+| owner  |
++--------+
+| Harold |
+| Harold |
++--------+
+
+e)mysql> SELECT name from pet where name like '%ff%';
++--------+
+| name   |
++--------+
+| Buffy  |
+| Fluffy |
++--------+
+
+
+f)mysql> SELECT name from pet where name like '____';
++------+
+| name |
++------+
+| Fang |
+| Slim |
++------+
