@@ -15,7 +15,7 @@ d ) mysql> SELECT * FROM pet WHERE birth >= '1990-1-1';
 | Slim     | Benny  | snake   | m    | 1996-04-29 | NULL       |
 | Fluffy   | Harold | cat     | f    | 1993-02-04 | NULL       |
 +----------+--------+---------+------+------------+------------+
-6 rows in set (0.02 sec)
+
 
 e) mysql> SELECT * FROM pet WHERE (sex = 'm' AND species = 'dog');
 +--------+-------+---------+------+------------+------------+
@@ -24,7 +24,7 @@ e) mysql> SELECT * FROM pet WHERE (sex = 'm' AND species = 'dog');
 | Fang   | Benny | dog     | m    | 1990-08-27 | NULL       |
 | Bowser | Diane | dog     | m    | 1998-08-31 | 1995-07-29 |
 +--------+-------+---------+------+------------+------------+
-2 rows in set (0.02 sec)
+
 
 
 f) mysql> SELECT name FROM pet WHERE (sex = 'm' and species = 'dog');
@@ -34,7 +34,7 @@ f) mysql> SELECT name FROM pet WHERE (sex = 'm' and species = 'dog');
 | Fang   |
 | Bowser |
 +--------+
-2 rows in set (0.02 sec)
+
 
 g) mysql> SELECT name, owner FROM pet WHERE (sex = 'm' and species = 'dog');
 +--------+-------+
@@ -43,4 +43,4 @@ g) mysql> SELECT name, owner FROM pet WHERE (sex = 'm' and species = 'dog');
 | Fang   | Benny |
 | Bowser | Diane |
 +--------+-------+
-2 rows in set (0.02 sec)
+
