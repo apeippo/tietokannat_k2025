@@ -1,0 +1,44 @@
+6.
+mysql> CREATE TABLE owner
+( first_name varchar(255),last_name varchar(255), address varchar(255),ownerID int PRIMARY
+KEY AUTO_INCREMENT );
+mysql> alter table pet drop column owner;
+mysql> alter table pet add column petID int primary key auto_increment;
+mysql> alter table pet add column ownerID int;
+mysql> alter table pet add constraint foreign key(ownerID) references owner(ownerID);
+mysql> desc pet;
++---------+-------------+------+-----+---------+----------------+
+| Field | Type | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+----------------+
+| name | varchar(20) | YES | | NULL | |
+| species | varchar(20) | YES | | NULL | |
+| sex | char(1) | YES | | NULL | |
+| birth | date | YES | | NULL | |
+| death | date | YES | | NULL | |
+| petID | int(11) | NO | PRI | NULL | auto_increment |
+| ownerID | int(11) | YES | MUL | NULL | |
++---------+-------------+------+-----+---------+----------------+
+mysql> desc owner;
++------------+--------------+------+-----+---------+----------------+
+| Field | Type | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+----------------+
+| first_name | varchar(255) | YES | | NULL | |
+| last_name | varchar(255) | YES | | NULL | |
+| address | varchar(255) | YES | | NULL | |
+| ownerID | int(11) | NO | PRI | NULL | auto_increment |
++------------+--------------+------+-----+---------+----------------+
+
+mysql> insert into owner values ('James','Bond','Osoite1',NULL);
+
+mysql> select * from owner;
++------------+-----------+----------+---------+
+| first_name | last_name | address | ownerID |
++------------+-----------+----------+---------+
+| James | Bond | Osoite1 | 1 |
+| Conan | Obrien | Osoite2 | 2 |
+| Kokki | Kolmonen | Osoite4 | 3 |
+| Neiti | Aika | Osoite4a | 4 |
++------------+-----------+----------+---------+
+
+mysql> update pet set ownerID=1 where name="Fang";
+

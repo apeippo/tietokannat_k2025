@@ -1,0 +1,17 @@
+5.
+a) SELECT * FROM departments;
+
+b) SELECT DISTINCT title FROM titles;
+
+c) SELECT MIN(salary) FROM salaries;
+
+SELECT MAX(salary) FROM salaries;
+
+d) SELECT AVG(salary) FROM salaries;
+
+e) SELECT * FROM employees WHERE last_name='Facello';
+
+f) SELECT COUNT(*) from employees where birth_date BETWEEN '1950-1-1' AND '1959-12-31';
+
+g) SELECT gender AS Sukupuoli,count(*) AS KPL FROM employees GROUP BY gender;
+
